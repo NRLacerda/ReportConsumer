@@ -1,0 +1,88 @@
+# Build results
+bin/
+obj/
+
+# VS Code directory
+.vscode/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio working folder
+.vs/
+
+# DotNet artifacts
+*.dbmdl
+*.dbproj
+*.jfm
+
+# Auto-generated files
+Generated_Code/
+
+# Backup & temporary files
+*_i.c
+*_p.c
+*_i.h
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*.vssscc
+
+# Web files
+wwwroot/
+
+# Resharper files
+_ReSharper*/
+*.DotSettings.user
+
+# NCrunch
+.ncrunchsolution
+*.ncrunchproject
+
+# SpecFlow
+*.feature.cs
+
+# Database files
+*.mdf
+*.ldf
+
+# Entity Framework Migrations
+Migrations/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# JetBrains Rider
+.idea/
+
+# Docker files
+**/Dockerfile
+**/docker-compose*
+
+# Logs and debug files
+*.log
+logs/
+
+# Environment and config files
+.env
+*.config.local
+*.localsettings.json
+
+# OS-specific files
+.DS_Store
+Thumbs.db
