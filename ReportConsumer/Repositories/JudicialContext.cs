@@ -20,24 +20,33 @@ namespace ReportConsumer.Repositories
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ProcessoJudicialEntity>()
-                .HasKey(p => p.Numero);  
+            modelBuilder.Entity<ProcessoJudicialEntity>(entity =>
+            {
+                entity.ToTable("processosJudiciais", "public"); 
 
-            modelBuilder.Entity<ProcessoJudicialEntity>()
-                .HasOne(p => p.Task) 
-                .WithMany()
-                .HasForeignKey(p => p.IdTask)
-                .OnDelete(DeleteBehavior.SetNull);
+                entity.HasKey(p => p.Numero); 
 
-            modelBuilder.Entity<ProcessoJudicialEntity>()
-                .ToTable("processosJudiciais");
+                entity.HasOne(p => p.Task) 
+                      .WithMany()
+                      .HasForeignKey(p => p.IdTask)
+                      .OnDelete(DeleteBehavior.SetNull);
+
+                entity.Property(p => p.DateProcessed)
+                .HasColumnType("timestamp with time zone")
+                .HasDefaultValueSql("NOW()");
+            });
+
 
             modelBuilder.Entity<TaskEntity>(entity =>
             {
-                entity.ToTable("tasks");
+                entity.ToTable("tasks", "public");
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Status).HasColumnType("CHAR(3)");
+                entity.Property(e => e.Started)
+                .HasColumnType("timestamp with time zone")
+                .HasDefaultValueSql("NOW()");
             });
+
         }
     }
 }

@@ -65,7 +65,7 @@ namespace ReportConsumer.Entities
         public string? Natureza { get; set; }
 
         [Column("id_task")]
-        public int? IdTask { get; set; }
+        public int IdTask { get; set; }
 
         [ForeignKey("IdTask")]
         public TaskEntity Task { get; set; }

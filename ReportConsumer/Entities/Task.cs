@@ -25,7 +25,7 @@ namespace ReportConsumer.Entities
         public long? LastProcessed { get; set; }
 
         [Column("started")]
-        public DateTime Started { get; set; }
+        public DateTime? Started { get; set; }
 
         [Column("ended")]
         public DateTime? Ended { get; set; }
